@@ -1,0 +1,37 @@
+body{
+    background-color: var(--oscuro) !important;
+    height: 100vh;
+}
+
+.formContainer{
+    position:relative;
+    width: 400px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 10px;
+    
+}
+
+.formContainer form{
+    padding: 20px;
+}
+
+
+.formContainer form p{
+    color: red;
+    text-align: center;
+}
+
+.logo{
+    position:absolute;
+    width: 750px;
+    top:40%;
+    left:40%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: blur(30px);
+    
+
+}

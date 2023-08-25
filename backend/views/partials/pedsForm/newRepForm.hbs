@@ -1,0 +1,60 @@
+<div class="page-header">
+    <h1>NUEVA ORDEN</h1>
+</div>
+
+<div class="form-container">
+    <div class="form-body">
+        <form class="row g-3" action="/reps/" method="post" id="newRepForm">
+            <div class="col-md-4">
+                <label for="orden_id" class="form-label">Orden N°</label>
+                <input type="text" class="form-control" placeholder="id" id="orden_id" disabled>
+            </div>
+            <div class="col-md-4">
+                <label for="fecha" class="form-label">Fecha Ingreso</label>
+                <input type="date" class="form-control" placeholder="Fecha Ingreso" id="fecha" name="fecha"
+                    value="{{data.fecha}}" required>
+            </div>   
+            <div class="col-md-4">
+                <label for="fecha" class="form-label">Cliente</label>
+                <select class="form-select" placeholder="Cliente" id="cliente_id" name="cliente_id">
+                    <option value="0">Cliente</option>
+                    {{#each clientes}}
+                    <option value={{this.cliente_id}} {{#selected cliente_id ../data.cliente_id}}{{/selected}}>
+                        {{this.cliente_id}} - {{this.nombre}}
+                    </option>
+                    {{/each }}
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="equipo" class="form-label">Producto</label>
+                <input type="text" class="form-control" placeholder="Equipo" id="equipo" name="equipo"
+                    value="{{data.equipo}}" required>
+            </div>
+            <div class="col-md-4">
+                <label for="marca" class="form-label">Marca</label>
+                <input type="text" class="form-control" placeholder="Marca" id="marca" name="marca"
+                    value="{{data.marca}}" required>
+            </div>
+            <div class="col-md-4">
+                <label for="modelo" class="form-label">Modelo</label>
+                <input type="text" class="form-control" placeholder="Modelo" id="modelo" name="modelo" 
+                    value="{{data.modelo}}">
+            </div>
+            <div class="col-md-12">
+                <label for="falla" class="form-label">Fallos</label>
+                <textarea  class="form-control" aria-label=="Falla" id="falla" name="falla" 
+                    value="{{data.falla}}" required></textarea>
+            </div>
+            <div class="col-md-4">
+                <label for="presupuesto" class="form-label">Presupuesto</label>
+                <input type="text" class="form-control" placeholder="Presupuesto" id="presupuesto" name="presupuesto" 
+                    value="{{data.presupuesto}}">
+            </div>
+            <p class="text-danger">{{aviso}}</p>
+            <div class="form-footer">
+                <a type="button" class="btn btn-secondary" href="/reps">Cancelar</a>
+                <button type="submit" class="btn btn-primary" id="btnSave">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

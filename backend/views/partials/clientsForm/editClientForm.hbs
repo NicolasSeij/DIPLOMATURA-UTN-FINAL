@@ -1,0 +1,42 @@
+<div class="page-header">
+    <h1>EDITANDO A {{data.nombre}}</h1>
+</div>
+
+<div class="form-container">
+    <div class="portrait">
+       <img src="/images/genericUser.png" />
+    </div>
+    <div class="form-body">
+        <form class="row g-3" action="/clientes/edit/{{data.cliente_id}}" method="post" id="editClientForm">
+            <div class="col-md-4">
+                <label for="cliente_id" class="form-label">ID</label>
+                <input type="text" class="form-control" placeholder="id" id="cliente_id" disabled value="{{data.cliente_id}}">
+            </div>
+            <div class="col-md-12">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre"
+                    value="{{data.nombre}}" required >
+            </div>
+            <div class="col-md-12">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" placeholder="Dirección" id="direccion" name="direccion"
+                    value="{{data.direccion}}" required>
+            </div>
+            <div class="col-md-12">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input type="text" class="form-control" placeholder="Telefono" id="telefono" name="telefono"
+                value="{{data.telefono}}" required>
+            </div>
+            <div class="col-md-12">
+                <label for="obs" class="form-label">Pedidos</label>
+                <input type="textarea" class="form-control" placeholder="Observaciones" id="obs" name="obs"
+                value="{{data.obs}}">
+            </div>
+            <p class="text-danger">{{aviso}}</p>
+            <div class="form-footer">
+                <a type="button" class="btn btn-secondary" href="/clientes">Cancelar</a>
+                <button type="submit" class="btn btn-primary" id="btnSave">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

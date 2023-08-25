@@ -1,0 +1,45 @@
+<div class="page-header">
+    <h1>DETALLES DE {{data.nombre}}</h1>
+    <a href="/usuarios/edit/{{data.user_id}}">{{>buttons/editBtn2}}</a>
+</div>
+
+<div class="form-container">
+    <div class="portrait">
+        <img src="{{data.imgUrl}}" />
+    </div>
+    <div class="form-body">
+        <form class="row g-3" action="/usuarios/" method="post" id="detailsUserForm" enctype="multipart/form-data">
+            <div class="col-md-4">
+                <label for="user_id" class="form-label">ID</label>
+                <input type="text" class="form-control" placeholder="id" id="user_id" disabled value="{{data.user_id}}">
+            </div>
+            <div class="col-md-8">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre"
+                    value="{{data.nombre}}" disabled>
+            </div>
+            <div class="col-md-6">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" class="form-control" placeholder="Usuario" id="username" name="username"
+                    value="{{data.username}}" disabled>
+            </div>
+            <div class="col-md-6">
+            </div>
+            <div class="form-check col-md-3">
+                <label class="form-check-label" for="es_empleado">Es Empleado?</label>
+                <input type="checkbox" class="form-check-input" id="es_empleado" name="es_empleado" {{#if
+                    data.es_empleado}} checked {{/if}} disabled>
+            </div>
+            <div class="form-check col-md-3">
+                <label class="form-check-label" for="es_admin">Es Admin?</label>
+                <input type="checkbox" class="form-check-input {{data.es_admin}}" id="es_admin" name="es_admin" {{#if
+                    data.es_admin}} checked {{/if}} disabled>
+            </div>
+            <p class="text-danger">{{aviso}}</p>
+            <div class="form-footer">
+                <a type="button" class="btn btn-secondary" href="/usuarios">Cancelar</a>
+                <button type="submit" class="btn btn-primary" id="btnSave" disabled>Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

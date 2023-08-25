@@ -1,0 +1,72 @@
+<div class="page-header">
+    <h1>{{{title}}}</h1>
+    <a href="/usuarios/new">{{{newButton}}}</a>
+</div>
+
+<div class="page-users">
+    {{#each data}}
+    <div class="user-card">
+        <div class="user-portrait">
+            <img class="user-img" src="{{this.imgUrl}}" />
+        </div>
+        <h4>{{this.nombre}}</h4>
+        <div class="user-titles">
+            {{#if this.es_admin}}
+            <h6>ADMIN</h6>
+            {{/if}}
+            {{#if this.es_empleado}}
+            <h6>Empleado</h6>
+            {{/if}}
+        </div>
+        <div class="botonera">
+            <a href="/usuarios/details/{{this.user_id}}">{{>buttons/detailBtn}}</a>
+            <a href="/usuarios/edit/{{this.user_id}}">{{>buttons/editBtn}}</a>
+
+            <form class="delete" action="/usuarios/delete/{{this.user_id}}" method="post" tecnico="{{this.es_empleado}}">
+
+                <button class="noBtn" type="submit">{{>buttons/deleteBtn}}</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+    {{/each}}
+</div>
+
+<script>
+
+    const forms = document.querySelectorAll('.delete');
+
+    forms.forEach(form => {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            if (event.target.attributes.empleado.value === "1") {
+
+                Swal.fire({
+                    title: 'Error',
+                    text: 'No se puede eliminar a un empleado',
+                    icon: 'error',
+                })
+            } else {
+                Swal.fire({
+                    title: 'Estas seguro?',
+                    text: 'La eliminación no se puede revertir',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                })
+
+            }
+        })
+    });
+
+</script>

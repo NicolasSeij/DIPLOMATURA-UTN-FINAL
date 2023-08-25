@@ -1,0 +1,35 @@
+nav {
+  align-items: center;
+  background-color: var(--claro);
+  box-shadow: 0 4px 2px -2px gray;
+  color: var(--oscuro);
+  display: flex;
+  font-weight: 700;
+  justify-content: flex-end;
+  position: sticky;
+
+}
+
+.btn-out {
+  background: var(--oscuro);
+  text-decoration: none;
+  border-radius: 3px;
+  color: var(--claro);
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 6px 12px;
+  transition: ease 0.4s;
+}
+
+.btn-out:hover {
+  box-shadow: 0 0 0 2px var(--oscuro);
+  background: rgba(0,0,0,0);
+  color: var(--oscuro);
+}
+
+nav h6{
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 0;
+}

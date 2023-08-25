@@ -1,0 +1,11 @@
+<img class="indexImg" src="/images/logoIndex.png" />
+
+<div class="GridContainer">
+    {{#each data}}
+    <div class="GridCard">
+        <p class="{{this.class}}">{{this.kpi}}</p>
+        <h5 class="GridCardTitle">{{this.title}}</h5>
+    </div>
+    {{/each}}
+
+</div>

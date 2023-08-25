@@ -1,0 +1,219 @@
+/*-------------------------------PAGE HEADER---------------------------------------*/
+
+
+.page-header {
+    width: 80%;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 3px;
+    background: var(--main-deg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.page-header h1 {
+    color: white;
+}
+
+
+
+/*-------------------------------PAGE TABLE---------------------------------------*/
+
+.page-table {
+    width: 90%;
+    margin-top: -2rem;
+    padding: 1.2rem;
+    border-radius: 3px;
+    background-color: var(--claro);
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+table{
+    margin-top: 1.2rem;
+}
+
+/*-------------------------------ICONS---------------------------------------*/
+
+.icon{
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+}
+
+
+.icon-edit{
+    color: var(--warning);
+}
+
+.icon-delete{
+    color: var(--danger);
+}
+
+.icon-detail{
+    color: var(--success);
+}
+
+.icon-new{
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: ease 0.4s;
+}
+.icon-new:hover{
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 3px white;
+}
+
+/*-------------------------------PAGE USERS---------------------------------------*/
+
+.page-users{
+    /*display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 15rem);
+    gap: 20px;
+    width: 90%;
+    margin-top: 1.5rem
+}
+
+.user-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 3px;
+    width: 15rem;
+    height: 22rem;
+    background: var(--fondo-claro);
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.user-card:hover{
+    transform: scale(1.1);
+}
+
+.user-portrait{
+    width: 14rem;
+    height: 14rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.user-img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.user-titles{
+    display: flex;
+    gap: 5px;
+}
+
+.botonera{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.noBtn{
+    border: none;
+}
+
+/*-------------------------------PAGE INDEX---------------------------------------*/
+
+.indexImg{
+    width: 45%;
+    transform: translate(0,10%);
+    filter: blur(10px);
+    z-index:-1;
+    position: absolute;
+}
+
+.GridContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 20px;
+    width: 90%;
+    margin-top: 3rem;
+}
+
+.GridCard{
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    background: var(--claro-deg);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.GridCardKpi{
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.GridCardList{
+    font-size: 1.75rem;
+    font-weight: 600;
+
+}
+
+.GridCardTitle{
+    font-style: italic;
+    text-transform: uppercase;
+    color: rgba(100, 100, 100, 1);
+}
+
+/*-------------------------------PAGE 401---------------------------------------*/
+
+.page401{
+    position: absolute;
+    top:50%;
+    font-weight: 900;
+}
+
+
+/*-------------------------------FORMS---------------------------------------------*/
+
+.form-container{
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    width: 60%;
+    border-radius: 10px;
+    background: var(--fondo-claro);
+}
+
+.form-container .portrait{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.form-container .portrait img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.form-container .form-body{
+    padding: 20px;
+}
+
+.form-footer{
+    display: flex;
+    justify-content: space-evenly;
+}
